@@ -13,11 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+//Orders Endpoints
 Route::get('orders', 'OrderController@index');
 Route::get('orders/{order}', 'OrderController@show');
 Route::post('orders', 'OrderController@store');
 Route::put('orders/{order}', 'OrderController@update');
 Route::delete('orders/{order}', 'OrderController@delete');
+//Registration Endpoints
+Route::post('register', 'UserAuthController@register');
+Route::post('login', 'Auth\LoginController@login');
