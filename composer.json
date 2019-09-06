@@ -11,7 +11,8 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "spatie/laravel-cors": "^1.6"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
@@ -56,6 +57,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "test" : [
+            "vendor/bin/phpunit"
         ]
     }
 }

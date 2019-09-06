@@ -25,3 +25,4 @@ Route::delete('orders/{order}', 'OrderController@delete');
 //Registration Endpoints
 Route::post('register', 'UserAuthController@register');
 Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout');
