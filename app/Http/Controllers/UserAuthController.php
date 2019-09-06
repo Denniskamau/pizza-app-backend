@@ -29,7 +29,7 @@ class UserAuthController extends Controller
             return response()->json(['data' => $user->toArray()], 201);
         }catch(Exception $e){
             DB::rollBack();
-            return response()->json(['data' => "User not registered. {$e->getMessage()}"], 500);
+            return response()->json(['data' => "User not registered. {$e->getMessage()}"], 422);
         }
     }
 

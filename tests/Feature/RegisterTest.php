@@ -8,6 +8,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class RegisterTest extends TestCase
 {
+    use RefreshDatabase;
+
     public function testsRegistersSuccessfully()
     {
         $payload = [
@@ -35,23 +37,7 @@ class RegisterTest extends TestCase
         $this->json('post', '/api/register')
             ->assertStatus(422)
             ->assertJson([
-                'name' => ['The name field is required.'],
-                'email' => ['The email field is required.'],
-                'password' => ['The password field is required.'],
-            ]);
-    }
-    public function testsRequirePasswordConfirmation()
-    {
-        $payload = [
-            'name' => 'John',
-            'email' => 'john@toptal.com',
-            'password' => 'toptal123',
-        ];
-
-        $this->json('post', '/api/register', $payload)
-            ->assertStatus(422)
-            ->assertJson([
-                'password' => ['The password confirmation does not match.'],
+                'data' =>'User not registered. The given data was invalid.'
             ]);
     }
 }

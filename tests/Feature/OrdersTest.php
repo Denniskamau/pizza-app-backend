@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\User;
 use App\Orders;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -11,6 +12,7 @@ class OrdersTest extends TestCase
 
 {
     use WithFaker,RefreshDatabase;
+
     public function testsOrdersAreCreatedCorrectly()
     {
         $user = factory(User::class)->create();
@@ -25,7 +27,7 @@ class OrdersTest extends TestCase
         ];
 
         $this->json('POST', '/api/orders', $payload, $headers)
-            ->assertStatus(200)
+            ->assertStatus(201)
             ->assertJson(['id' => 1, 'pizza' => 'PizzaINN', 'size' => 'Large',
                             'quantity'=>2,'location'=>'Nairobi','toppings'=>'onions']);
     }
@@ -54,7 +56,7 @@ class OrdersTest extends TestCase
         $response = $this->json('PUT', '/api/orders/' . $order->id, $payload, $headers)
             ->assertStatus(200)
             ->assertJson([
-                'id' => 1,
+                'id' => 2,
                 'pizza' => 'Peppinos',
                 'size' => 'Small',
                 'quantity'=>3,

@@ -3,18 +3,24 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class LoginTest extends TestCase
 {
+    use RefreshDatabase;
+    
     public function testRequiresEmailAndLogin()
     {
-        $this->json('POST', 'api/login')
+        $this->json('POST', 'api/login', [])
             ->assertStatus(422)
             ->assertJson([
-                'email' => ['The email field is required.'],
-                'password' => ['The password field is required.'],
+                "message" => "The given data was invalid.",
+                "errors" => [
+                    'email' => ['The email field is required.'],
+                    'password' => ['The password field is required.'],
+                ]
             ]);
     }
     public function testUserLoginsSuccessfully()
