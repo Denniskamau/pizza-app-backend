@@ -61,12 +61,11 @@ return [
             ]) : [],
         ],
 
-        'testing' => [
+        'test' => [
             'driver'    => 'mysql',
             'host'      => env('DB_TEST_HOST', 'localhost'),
-            'database'  => env('DB_TEST_DATABASE', 'pizzaApp'),
-            'username'  => env('DB_TEST_USERNAME', 'dento'),
-            'password'  => env('DB_TEST_PASSWORD', 'd3n!t0K@M@U'),
+            'database'  => env('DB_TEST_DATABASE', 'pizzaApp_est'),
+            'username'  => env('DB_TEST_USERNAME', 'travis'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

@@ -2,10 +2,11 @@ language: php
 
 php:
   - 7.2
-
+services:
+  - mysql
 before_script:
   - cp .env.travis .env
-  - mysql -u root -e 'create database pizzaApp;'
+  - mysql -e 'create database pizzaApp;'
   - composer self-update
   - composer install --no-interaction
 
