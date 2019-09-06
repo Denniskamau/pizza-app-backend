@@ -34,9 +34,7 @@ class OrderController extends Controller
 
     public function delete(Orders $order)
     {
-
         $order->delete();
-
-        return response() ->json(null,204);
+        return response()->json(['data' => Orders::all()],200);
     }
 }
