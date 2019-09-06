@@ -5,7 +5,7 @@ php:
 
 before_script:
   - cp .env.travis .env
-  - mysql -u dento -e 'create database pizzaApp;'
+  - mysql -u root -e 'create database pizzaApp;'
   - composer self-update
   - composer install --no-interaction
 
