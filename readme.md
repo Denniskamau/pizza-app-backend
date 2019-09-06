@@ -13,9 +13,9 @@ Login `/api/login` `GET`
 
 ### Pizza Order Endpoints
 
-⋅⋅1. Ordered sub-list
 
-`POST` `/api/orders` - Create a new order record
-`GET` `/api/orders` - Get all Orders
-`PUT` `/api/orders/id` - Update an order record
-`DELETE` `/api/orders/id` - Delete an order record
+
+* `POST` `/api/orders` - Create a new order record
+* `GET` `/api/orders` - Get all Orders
+* `PUT` `/api/orders/id` - Update an order record
+* `DELETE` `/api/orders/id` - Delete an order record
