@@ -8,12 +8,14 @@ A simple APi that exposes pizza ordering endpoints
 
 ### Authentication
 
-Registration `/api/register` `POST`
-Login `/api/login` `GET`
+* Registration `/api/register` `POST`
+* Login `/api/login` `GET`
 
 ### Pizza Order Endpoints
 
-`POST` `/api/orders` - Create a new order record
-`GET` `/api/orders` - Get all Orders
-`PUT` `/api/orders/id` - Update an order record
-`DELETE` `/api/orders/id` - Delete an order record
+
+
+* `POST` `/api/orders` - Create a new order record
+* `GET` `/api/orders` - Get all Orders
+* `PUT` `/api/orders/id` - Update an order record
+* `DELETE` `/api/orders/id` - Delete an order record
