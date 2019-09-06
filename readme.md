@@ -8,8 +8,8 @@ A simple APi that exposes pizza ordering endpoints
 
 ### Authentication
 
-Registration `/api/register` `POST`
-Login `/api/login` `GET`
+* Registration `/api/register` `POST`
+* Login `/api/login` `GET`
 
 ### Pizza Order Endpoints
 
