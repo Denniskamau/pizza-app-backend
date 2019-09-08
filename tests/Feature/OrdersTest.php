@@ -79,7 +79,7 @@ class OrdersTest extends TestCase
         ]);
 
         $this->json('DELETE', '/api/orders/' . $order->id, [], $headers)
-            ->assertStatus(204);
+            ->assertStatus(200);
     }
 
     public function testOrdersAreListedCorrectly()
